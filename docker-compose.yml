@@ -1,0 +1,28 @@
+version: "3.7"
+services:
+
+  nginx:
+    container_name: nginx
+    build: ./nginx
+    restart: always
+    ports:
+      - "8080:8009"
+    volumes:        
+        - oot_data:/home/oot/objtest
+        - ./log/nginx:/var/log/nginx
+    depends_on:
+      - oot
+    
+
+  oot:
+    container_name: oot
+    build: ./oot
+    restart: always
+    command: uwsgi --emperor /etc/uwsgi/vassals
+    ports:
+      - "8002:8000"
+    volumes:
+      - oot_data:/home/oot/objtest
+
+volumes:
+  oot_data:

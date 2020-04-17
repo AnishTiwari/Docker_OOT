@@ -1,0 +1,2 @@
+172.18.0.1 - - [22/Feb/2020:19:21:38 +0000] "GET / HTTP/1.1" 502 150 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:72.0) Gecko/20100101 Firefox/72.0"
+172.18.0.1 - - [22/Feb/2020:19:21:38 +0000] "GET /favicon.ico HTTP/1.1" 502 150 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:72.0) Gecko/20100101 Firefox/72.0"

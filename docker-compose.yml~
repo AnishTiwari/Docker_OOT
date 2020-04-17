@@ -1,0 +1,27 @@
+version: "3.7"
+services:
+
+  nginx:
+    build: ./nginx
+    container_name: nginx
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - oot
+    command: service nginx restart 
+
+  oot:
+    build: ./oot
+    container_name: oot
+    restart: always
+    expose:
+      - 8080
+    volumes:
+      - /uwsgi
+      - /tmp
+    command: uwsgi --emperor /etc/uwsgi/vassals
+
+volumes:
+  uwsgi:
+  tmp:
